@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>Esem&#xE9;nyek</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="/css/common.css" rel="stylesheet" type="text/css" />       
+        <link href="/css/drawer.css" rel="stylesheet" type="text/css" />
+        <link href="/css/headers.css" rel="stylesheet" type="text/css" />
+        <link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+        
+        <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/js/common.js"></script>
+    </head>
+    <body>
+    	<section data-type="sidebar">
+        	<header>
+            	<h1>Men&#xFC;</h1>
+            </header>
+            <nav>
+                <ul>
+                	<li><a href="about.html">Le&#xED;r&#xE1;s</a></li>
+                    <li><a href="exit.html">Kil&#xE9;p&#xE9;s</a></li>
+            	</ul>
+            </nav>
+       	</section>
+        <section id="drawer" role="region">
+        	<header>
+            	<a href="#content"><span class="icon icon-menu">hide sidebar</span></a>
+                <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+                <h1>Esem&#xE9;nyek</h1>
+            </header>
+            <div role="main">
+            	<section class="gaia-list fit scroll sticky">
+                	<article id="events">
+                		<div class="newEvent"><button class="newEventButton" onclick="showNewEvent()">&#xDA;j esem&#xE9;ny</button></div>
+                    	<div id="listOfEvents" class="listOfEvents">
+                    	</div>
+                    </article>
+                </section>
+            </div>
+       	</section>
+    </body>
+</html>

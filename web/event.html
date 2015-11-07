@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>Esem&#xE9;ny</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="/css/drawer.css" rel="stylesheet" type="text/css" />
+        <link href="/css/headers.css" rel="stylesheet" type="text/css" />
+        <link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/confirm.css" rel="stylesheet" type="text/css"/>
+        
+        <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/js/common.js"></script>
+    </head>
+    <body>
+    	<section data-type="sidebar">
+        	<header>
+            	<h1>Men&#xFC;</h1>
+            </header>
+            <nav>
+                <ul>
+                	<li><a href="about.html">Le&#xED;r&#xE1;s</a></li>
+                    <li><a href="exit.html">Kil&#xE9;p&#xE9;s</a></li>
+            	</ul>
+            </nav>
+       	</section>
+        <section id="drawer" role="region">
+        	<header>
+            	<a href="#content"><span class="icon icon-menu">hide sidebar</span></a>
+                <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+                <menu type="toolbar">
+                	<a id="eventBackHref" href="index.html"><span class="icon icon-back">Vissza</span></a>
+               	</menu>
+                <h1>Esem&#xE9;ny</h1>
+            </header>
+            <div role="main">
+            	<section class="gaia-list fit scroll sticky">
+                	<article>
+                		<input id="eventId" type="hidden">
+                    	<div id="eventContent" class="eventContent">
+                    		<textarea id="eventDescription" class="eventDescription" readonly></textarea>
+                    		<div class="eventButtons">
+                    			<div class="mid"><button id="eventEdit" class="eventEdit">Szerkeszt&#xE9;s</button></div>
+                    			<button id="eventDelete" class="eventDelete">T&#xF6;rl&#xE9;s</button>
+                    			<button id="eventSend" class="eventSend">E-mail</button>
+                    		</div>
+                    		<div class="mid"><img alt="icon" src="/images/icon.png"></div>
+                    	</div>
+                    	<div id="editEventContent" class="editEventContent hidden">
+	                    	<input id="editEventTitle" class="editEventTitle" type="text" placeholder="C&#xED;m">
+	                    	<input id="editEventDate" class="editEventDate" type="date" placeholder="D&#xE1;tum">
+	                    	<textarea id="editEventDescription" class="editEventDescription" placeholder="Le&#xED;r&#xE1;s"></textarea>
+	                    	<div class="editEventButtons"><button id="editEventSave" class="editEventSave">Ment&#xE9;s</button></div>
+	                    	<div class="mid"><img alt="icon" src="/images/icon.png"></div>
+                    	</div>
+                    	<form id="deleteEventConfirm" class="hidden" role="dialog" data-type="confirm" onsubmit="return false">
+				        	<section>
+				            	<h1>T&#xF6;rl&#xE9;s</h1>
+				                <p>Biztos, hogy ki szeretn&#xE9; t&#xF6;r&#xF6;lni?</p>
+				            </section>
+				            <menu>
+				            	<button class="recommend" onclick="hideDeleteEventConfirm()">M&#xE9;gse</button>
+				                <button class="danger" onclick="deleteEventAction()">Igen</button>
+				            </menu>
+				        </form>
+                    </article>
+                </section>
+            </div>
+       	</section>
+    </body>
+</html>

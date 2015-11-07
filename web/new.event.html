@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>&#xDA;j esem&#xE9;ny</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="/css/drawer.css" rel="stylesheet" type="text/css" />
+        <link href="/css/headers.css" rel="stylesheet" type="text/css" />
+        <link href="/css/layout.css" rel="stylesheet" type="text/css"/>
+        
+        <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/js/common.js"></script>
+    </head>
+    <body>
+    	<section data-type="sidebar">
+        	<header>
+            	<h1>Men&#xFC;</h1>
+            </header>
+            <nav>
+                <ul>
+                	<li><a href="about.html">Le&#xED;r&#xE1;s</a></li>
+                    <li><a href="exit.html">Kil&#xE9;p&#xE9;s</a></li>
+            	</ul>
+            </nav>
+       	</section>
+        <section id="drawer" role="region">
+        	<header>
+            	<a href="#content"><span class="icon icon-menu">hide sidebar</span></a>
+                <a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+                <menu type="toolbar">
+                	<a href="index.html"><span class="icon icon-back">Vissza</span></a>
+               	</menu>
+                <h1>&#xDA;j esem&#xE9;ny</h1>
+            </header>
+            <div role="main">
+            	<section class="gaia-list fit scroll sticky">
+                	<article>
+                    	<div class="newEventContent">
+                    		<input id="newEventTitle" class="newEventTitle" type="text" placeholder="C&#xED;m">
+                    		<input id="newEventDate" class="newEventDate" type="date" placeholder="D&#xE1;tum">
+                    		<textarea id="newEventDescription" class="newEventDescription" placeholder="Le&#xED;r&#xE1;s"></textarea>
+                    		<div class="newEventButtons"><button class="newEventSave" onclick="addEvent()">Ment&#xE9;s</button></div>
+                    		<div class="mid"><img alt="icon" src="/images/icon.png"></div>
+                    	</div>
+                    </article>
+                </section>
+            </div>
+       	</section>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "Események",
+    
+  "launch_path": "/index.html",
+    
+  "icons": {
+    "128": "/images/icon.png"
+  },
+  
+  "developer": {
+    "name": "Fekete Norbert",
+    "url": ""
+  }
+}
