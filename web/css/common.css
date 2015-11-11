@@ -60,7 +60,17 @@ section[data-type="sidebar"]>header .icon.icon-add {
 	padding: 5px;
 	border-bottom: 2px solid #001764;
 }
-.titleOfEventm, .newEventButton { padding: 5px; }
+.titleOfEvent, .newEventButton { padding: 5px; }
+
+.titleOfEvent {
+	width: 280px;
+	height: 52px;
+	color: #fff;
+	text-align: center;
+	font-size: 2.2rem;
+	background-color: #03A9F4;
+	border: 0;
+}
 
 .newEvent { margin-right: 10px; margin-bottom: 25px; }
 .newEventButton { font-size: 1em; margin: 0; }
@@ -85,6 +95,8 @@ section[data-type="sidebar"]>header .icon.icon-add {
 	padding: 5px;
 }
 
+.editEventTitle, .newEventTitle { height: 38px; }
+
 .newEventDescription, .eventDescription, .editEventDescription { height: 85px; }
 
 .newEventButtons, .eventButtons, .editEventButtons {
@@ -97,4 +109,4 @@ section[data-type="sidebar"]>header .icon.icon-add {
 
 .eventEdit { width: 100px; }
 .eventDelete { margin-right: 15px; }
-.eventButtons { width: 190px; }
+.eventButtons { width: 192px; }

@@ -28,13 +28,6 @@ function showEvent(id) {
 	window.location.href ="event.html?desc=" + id;
 }
 
-function addEventIntoList(id, date, title) {
-	var dateOfEventDiv = $("<div class='dateOfEvent'></div>").text(date);
-	var titleOfEventDiv = $("<div class='titleOfEvent'></div>").text(title);
-	var eventDiv = $("<div class='event' onclick='showEvent(" + id + ")'></div>").append(dateOfEventDiv, titleOfEventDiv);
-	$("#listOfEvents").append(eventDiv);
-}
-
 function getURLParameter(sParam) {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
@@ -76,8 +69,12 @@ function listEventsHandler() {
 			var cursor = event.target.result;
 		    
 		    if (cursor) {
-		      addEventIntoList(cursor.value.id, cursor.value.date, cursor.value.title);
-		      cursor.continue();
+		    	var dateOfEventDiv = $("<div class='dateOfEvent'></div>").text(cursor.value.date);
+		    	var titleOfEventDiv = $("<textarea class='titleOfEvent' readonly></textarea>").text(cursor.value.title);
+		    	var eventDiv = $("<div class='event' onclick='showEvent(" + cursor.value.id + ")'></div>").append(dateOfEventDiv, titleOfEventDiv);
+		    	$("#listOfEvents").append(eventDiv);
+
+		    	cursor.continue();
 		    }	    
 		};
 		  
@@ -121,12 +118,6 @@ function addEvent() {
 function showDescription(id) {
 	var database = window.indexedDB;
 	var openDatabaseRequest = database.open("Events", 1);
-	
-	openDatabaseRequest.onupgradeneeded = function (event) {
-	    var upgradeDatabase = event.currentTarget.result;
-	    var upgradeDatabaseOS = upgradeDatabase.createObjectStore ("Events", {keyPath: "id", autoIncrement: true});
-	    upgradeDatabaseOS.createIndex ("id", "id", {unique: true});
-	};
 	
 	openDatabaseRequest.onsuccess = function () {
 		var successDatabase = this.result;  
@@ -175,12 +166,6 @@ function eventEditSaveHandler() {
 	$("#editEventSave").click(function() {
 		var database = window.indexedDB;
 		var openDatabaseRequest = database.open("Events", 1);
-		
-		openDatabaseRequest.onupgradeneeded = function (event) {
-		    var upgradeDatabase = event.currentTarget.result;
-		    var upgradeDatabaseOS = upgradeDatabase.createObjectStore ("Events", {keyPath: "id", autoIncrement: true});
-		    upgradeDatabaseOS.createIndex ("id", "id", {unique: true});
-		};
 		
 		openDatabaseRequest.onsuccess = function () {
 			var successDatabase = this.result;  
@@ -239,12 +224,6 @@ function hideDeleteEventConfirm() {
 function deleteEventAction() {
 	var database = window.indexedDB;
 	var openDatabaseRequest = database.open("Events", 1);
-	
-	openDatabaseRequest.onupgradeneeded = function (event) {
-	    var upgradeDatabase = event.currentTarget.result;
-	    var upgradeDatabaseOS = upgradeDatabase.createObjectStore ("Events", {keyPath: "id", autoIncrement: true});
-	    upgradeDatabaseOS.createIndex ("id", "id", {unique: true});
-	};
 	
 	openDatabaseRequest.onsuccess = function () {
 		var successDatabase = this.result;  
